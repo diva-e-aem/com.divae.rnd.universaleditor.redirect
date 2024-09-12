@@ -15,7 +15,7 @@
   <packaging>jar</packaging>
 
   <name>com.divae.rnd.universaleditor.redirect</name>
-  <description></description>
+  <description>Redirect to enable Universal Editor support in local AEMaaCS SDK for EDS websites</description>
 
   <scm>
     <connection>scm:git:https://github.com/diva-e-aem/com.divae.rnd.universaleditor.redirect.git</connection>

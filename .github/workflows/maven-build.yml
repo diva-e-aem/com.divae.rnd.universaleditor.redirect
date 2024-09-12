@@ -31,7 +31,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v4
         with:
-          distribution: ${{ matrix.os }}
+          distribution: ${{ matrix.distribution }}
           java-version: ${{ matrix.java }}
           cache: maven
 
