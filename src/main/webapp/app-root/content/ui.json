@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "sling:Folder",
+  "sling:resourceType": "universaleditor-redirect/components/redirect",
+  "sling:vanityPath": "/ui",
+  "sling:vanityOrder": 301
+}

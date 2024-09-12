@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script data-sly-use.config="com.divae.rnd.universaleditor.redirect.RedirectConfigModel">
+    var contentRef = window.location.hash.substring(window.location.hash.indexOf('/content/'));
+    var redirectTarget = "${config.redirectTarget @ context = 'uri'}";
+    window.location.href = redirectTarget + contentRef;
+  </script>
+</head>
+<body>
+  Redirect...
+</body>
+</html>

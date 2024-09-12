@@ -1,0 +1,40 @@
+# Build validation
+
+name: Build
+
+on:
+  push:
+    branches-ignore:
+      - master
+      - experimental/**
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches-ignore:
+      - master
+      - experimental/**
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        java: [11, 17, 21]
+        os: [ubuntu-latest]
+        distribution: [temurin]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: ${{ matrix.os }}
+          java-version: ${{ matrix.java }}
+          cache: maven
+
+      - name: Build and verify (without Sonar)
+        run: mvn -B -U clean verify
+        shell: bash
